@@ -1,0 +1,15 @@
+{
+  "name": "sls-ws",
+  "version": "1.0.0",
+  "description": "Serverless framework workspace ===",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless": "^1.34.1",
+    "serverless-offline-python": "^3.21.3"
+  }
+}
