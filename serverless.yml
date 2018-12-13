@@ -1,0 +1,17 @@
+service: sls-ws-app
+
+plugins:
+  serverless-offline-python
+
+provider:
+  name: aws
+  runtime: python3.6
+
+functions:
+  app:
+    handler: lambda_function.lambda_handler
+    events:
+      - http:
+          path: /app/{method}
+          method: get
+
