@@ -4,7 +4,7 @@
   "description": "Serverless framework workspace ===",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "serverless offline --host 0.0.0.0"
   },
   "author": "",
   "license": "MIT",

@@ -1,11 +1,15 @@
 service: sls-ws-app
 
 plugins:
-  serverless-offline-python
+  - serverless-offline-python
 
 provider:
   name: aws
   runtime: python3.6
+
+custom:
+  serverless-offline:
+    port: 80
 
 functions:
   app:
