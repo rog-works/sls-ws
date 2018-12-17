@@ -18,6 +18,9 @@ functions:
       - http:
           path: /app1/{method}
           method: get
+          integration: lambda
+          response:
+            template: $input.path('$')
 
   app2:
     handler: src.lambda_function.lambda_handler
@@ -25,4 +28,12 @@ functions:
       - http:
           path: /app2/{method}
           method: get
+          integration: lambda
+          request:
+            template:
+              application/json: '{
+                "env": "local"
+              }'
+          response:
+            template: $input.path('$')
 
