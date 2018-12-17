@@ -8,5 +8,6 @@ services:
       - ./package.json:/opt/app/package.json
       - ./serverless.yml:/opt/app/serverless.yml
       - ./lambda_function.py:/opt/app/lambda_function.py
+      - ./src:/opt/app/src
     ports:
       - 28080:80
