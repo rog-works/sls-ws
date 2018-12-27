@@ -19,9 +19,19 @@ functions:
           path: /app1/{method}
           method: get
           integration: lambda
+          request:
+            template:
+              application/json: |
+                {
+                  "env": "local"
+                }
           response:
-            template: $input.path('$')
-
+            headers:
+              Content-Type: application/json
+            template: $input.path('$.body')
+            statusCodes:
+              200:
+                pattern: ''
   app2:
     handler: src.lambda_function.lambda_handler
     events:
@@ -31,9 +41,15 @@ functions:
           integration: lambda
           request:
             template:
-              application/json: '{
-                "env": "local"
-              }'
+              application/json: |
+                {
+                  "env": "local"
+                }
           response:
-            template: $input.path('$')
+            headers:
+              Content-Type: application/json
+            template: $input.path('$.body')
+            statusCodes:
+              200:
+                pattern: ''
 

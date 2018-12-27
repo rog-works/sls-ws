@@ -1,9 +1,14 @@
-# -*- config: utf8 -*-
+import json
 
 def lambda_handler(event, context):
 	print(event)
 	return {
-		'statusCode': 200,
-		'data': 'hellow world',
+		'body': json.dumps({
+			'status': 0,
+			'message': '',
+			'data': {
+				'content': 'hellow world',
+			},
+		}),
 	}
 
