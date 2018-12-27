@@ -9,3 +9,4 @@ services:
       - ./src:/opt/app/src
     ports:
       - 28080:80
+    command: npm run run
